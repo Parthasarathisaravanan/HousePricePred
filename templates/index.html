@@ -1,0 +1,77 @@
+<html>
+<head>
+    <style>
+        body
+        {
+        background-image:url({{url_for('static',filename='images/house.jpg') }} )
+        }
+    </style>
+</head>
+
+<body >
+
+      <form action="/result" method="post">
+          <h1>House Price Prediction</h1>
+          <label for="posted">Posted By:</label>
+            <select id="posted" name="posted">
+                <option value="Builder">Builder</option>
+                <option value="Dealer">Dealer</option>
+                <option value="Owner">Owner</option>
+            </select>
+          <p>
+          <label for="bhk">BHK or RK:</label>
+            <select id="bhk" name="bhk">
+                <option value="BHK">BHK</option>
+                <option value="RK">RK</option>
+            </select>
+
+
+          <label for="construction">Under Construction:</label>
+            <select id="construction" name="construction">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+          <label for="rera">RERA:</label>
+            <select id="rera" name="rera">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+          </p>
+          <br>
+          <label for="nbhk">Enter the No Of BHK:</label>
+          <input type="text" id="nbhk" name="nbhk">
+          </br>
+          <p>
+          <label for="sqf">Enter the Square Feet:</label>
+          <input type="text" id="sqf" name="sqf">
+          </p>
+          <br>
+              <label for="ready">ready to move:</label>
+            <select id="ready" name="ready">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+              <label for="resale">Resale value:</label>
+            <select id="resale" name="resale">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+          </br>
+          <label for="lat">Enter the Latitude:</label>
+          <input type="text" id="lat" name="lat">
+          <label for="long">Enter the Longitude:</label>
+          <input type="text" id="long" name="long">
+
+
+
+        <p>
+         <input type="submit" value="submit"></input>
+        </p>
+       </form>
+
+
+</body>
+
+   <h1>The predicted house price in Lakhs {{val}}</h1>
+
+</html>
